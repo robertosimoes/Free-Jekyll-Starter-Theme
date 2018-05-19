@@ -1,0 +1,11 @@
+# Overrides _config.yml on development environment
+url: ""
+
+google_analytics: ""
+
+webmaster_verifications:
+  google:
+  bing:
+  alexa:
+  yandex:
+  baidu:

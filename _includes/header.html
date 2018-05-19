@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% if page.url == '/' %}
+    <title>{{ site.publisher_data.name }} | {{ site.publisher_data.slogan }}</title>
+    {% seo title=false %}
+  {% elsif page.id == 'categories' %}
+    <title>
+      Posts in Category: {% if page.autopages %}{{page.autopages.display_name}}{% endif %}{% if paginator.total_pages > 1 %} | Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}}{% endif %} | {{ site.publisher_data.name }}
+    </title>
+    {% seo title=false %}
+  {% elsif page.id == 'tags' %}
+    <title>
+      Posts Tagged with: {% if page.autopages %}{{page.autopages.display_name}}{% endif %}{% if paginator.total_pages > 1 %} | Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}}{% endif %} | {{ site.publisher_data.name }}
+    </title>
+    {% seo title=false %}
+  {% else %}
+    {% seo %}
+  {% endif %}
+
+  <style>
+    {% include critical/critical.css %}
+  </style>
+</head>
+
+<body>
+  {% include header-nav.html %}

@@ -2,3 +2,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+npm-debug.log
+node_modules
+.DS_Store
+**/.DS_Store

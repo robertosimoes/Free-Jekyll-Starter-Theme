@@ -1,0 +1,121 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Free Jekyll Starter Theme by Elumina
+description: >- # this means to ignore newlines until next variable
+  Jekyll Starter Theme is a boilerplate for your next Jekyll project.
+  It allows designers and developers to start a new website or a blog quickly.
+
+baseurl: ""
+url: "https://elumina.me"
+permalink: "/blog/:title/"
+
+publisher_data:
+  type: Organization
+  name: Elumina
+  slogan: Design means.
+  logo_2x: /assets/images/logo-elumina-color-slogan-centered@2x.png
+  logo: /assets/images/logo-elumina-color-slogan-centered.png
+  year_started: "2016"
+  twitter_username: elumina_me
+  github_username: robertosimoes
+  instagram_username: elumina_me
+  email: email@elumina.me
+
+# Settings for jekyll-seo-tag
+author: Elumina
+logo: /assets/images/logo-elumina-color-slogan-centered.png
+
+twitter:
+  username: elumina_me
+  card: summary_large_image
+
+facebook:
+  app_id:
+  publisher:
+  admins:
+
+social:
+  name: Elumina
+  links:
+    - https://twitter.com/elumina_me/
+    - https://www.facebook.com/elumina.me/
+    - https://br.pinterest.com/elumina_me/
+    - https://soundcloud.com/elumina_me/
+
+google_analytics: "" # UA-XXXXXXX-XX
+
+webmaster_verifications:
+  google:
+  bing:
+  alexa:
+  yandex:
+  baidu:
+
+# Settings for jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 2
+  collection: posts
+  title: ":title - Page :num"
+  permalink: "/:num/"
+  limit: 0
+  sort_field: date
+  sort_reverse: true
+
+autopages:
+  enabled      : true
+  categories:
+    enabled    : true
+    layouts:
+      - "archive-categories.html"
+    permalink  : "/blog/category/:cat"
+    slugify:
+      mode: 'ascii'
+      cased: true
+  collections:
+    enabled    : false
+  tags:
+    enabled    : true
+    layouts:
+      - "archive-tags.html"
+    permalink  : "/blog/tag/:tag"
+    slugify:
+      mode: 'ascii'
+      cased: true
+
+# Content Settings
+defaults:
+- scope:
+    path: '/blog/:title/'
+    type: posts
+  values:
+    layout: post
+    excerpt:
+- scope:
+    path: "/pages/"
+    type: pages
+  values:
+    layout: default
+
+include:
+  - _pages
+
+exclude:
+- node_modules
+- gulpfile.js
+- Gemfile
+- Gemfile.lock
+- package.json
+- package-lock.json
+- vendor
+
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+  - jekyll-feed

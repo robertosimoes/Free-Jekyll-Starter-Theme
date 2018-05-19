@@ -1,0 +1,39 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+
+nav: top
+nav_title: Blog
+nav_weight: 2
+
+pagination:
+  per_page: 2
+  enabled: true
+  trail:
+    before: 3
+    after: 3
+
+breadcrumbs:
+  - label: "Blog"
+    url: ""
+---
+
+<div id="blog_page" class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <h1>{{ page.title }} | Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}}</h1>
+      <ul class="posts row no-bullet">
+        {% for post in paginator.posts %}
+          <li class="col-12 col-md-6">
+            {% include blog-card.html post-meta="true" post-date="true" post-categories="true" post-tags="true" post-excerpt="true" %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% include blog-list-pagination.html %}
+
+    </div>
+  </div>
+</div>

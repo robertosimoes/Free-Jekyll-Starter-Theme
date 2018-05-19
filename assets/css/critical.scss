@@ -1,0 +1,28 @@
+@import "_partials/variables";
+@import "_partials/normalize";
+@import "_partials/grid";
+
+
+body {
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  background-color: $bg;
+}
+h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: black;
+}
+a, a:visited {
+  color: blue;
+}
+a:hover {
+  color: red;
+}
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0;
+  padding-right: 0;
+}

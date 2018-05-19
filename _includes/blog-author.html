@@ -1,0 +1,27 @@
+<aside class="post-author">
+  <hr>
+  <h3>About {{author.name}}</h3>
+  {% if author.picture %}
+    <img src="{{author.picture}}" class="author-img" alt="{{author.name}} avatar" width="72" height="72">
+  {% endif %}
+  <ul>
+    {% if author.website %}
+     <li>
+       <a href="{{author.website}}" class="icon fa-twitter"><span class="label">Website</span></a>
+     </li>
+   {% endif %}
+   {% if author.twitter %}
+      <li>
+        <a href="{{author.twitter}}" class="icon fa-twitter"><span class="label">Twitter</span></a>
+      </li>
+    {% endif %}
+    {% if author.facebook %}
+       <li>
+         <a href="{{author.facebook}}" class="icon fa-twitter"><span class="label">Facebook</span></a>
+       </li>
+     {% endif %}
+  </ul>
+  <p>
+    {{ author.bio }}
+  </p>
+</aside>
